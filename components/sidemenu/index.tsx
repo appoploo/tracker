@@ -16,10 +16,13 @@ export function SideMenu() {
           })}
         >
           <Link href="/mainpage">
-            <img
-              src="https://s2.svgbox.net/octicons.svg?ic=circle&color=white"
-              className="w-5 h-5 "
-            />
+            <picture>
+              <img
+                src="https://s2.svgbox.net/octicons.svg?ic=circle&color=white"
+                className="w-5 h-5 "
+                alt="image mainpage "
+              />
+            </picture>
           </Link>
         </li>
         <li
@@ -28,10 +31,13 @@ export function SideMenu() {
           })}
         >
           <Link href="/menu">
-            <img
-              src="https://s2.svgbox.net/hero-solid.svg?ic=menu&color=white"
-              className="w-5 h-5"
-            />
+            <picture>
+              <img
+                src="https://s2.svgbox.net/hero-solid.svg?ic=menu&color=white"
+                className="w-5 h-5"
+                alt="image menu "
+              />
+            </picture>
           </Link>
         </li>
         <li
@@ -40,10 +46,13 @@ export function SideMenu() {
           })}
         >
           <Link href="/contacts">
-            <img
-              src="https://s2.svgbox.net/octicons.svg?ic=person&color=white"
-              className="w-5 h-5"
-            />
+            <picture>
+              <img
+                src="https://s2.svgbox.net/octicons.svg?ic=person&color=white"
+                className="w-5 h-5"
+                alt="image contacts "
+              />
+            </picture>
           </Link>
         </li>
         <li
@@ -52,10 +61,13 @@ export function SideMenu() {
           })}
         >
           <Link href="/archives">
-            <img
-              src="https://s2.svgbox.net/hero-outline.svg?ic=newspaper&color=white"
-              className="w-5 h-5"
-            />
+            <picture>
+              <img
+                src="https://s2.svgbox.net/hero-outline.svg?ic=newspaper&color=white"
+                className="w-5 h-5"
+                alt="image archives "
+              />
+            </picture>
           </Link>
         </li>
         <li
@@ -64,31 +76,40 @@ export function SideMenu() {
           })}
         >
           <Link href="/map">
-            <img
-              src="https://s2.svgbox.net/materialui.svg?ic=assistant_navigation&color=white"
-              className="w-5 h-5"
-            />
+            <picture>
+              <img
+                src="https://s2.svgbox.net/materialui.svg?ic=assistant_navigation&color=white"
+                className="w-5 h-5"
+                alt="image map"
+              />
+            </picture>
           </Link>
         </li>
 
         <li
           className={clsx("mt-auto", {
-            "border-r-4 border-r-indigo-600": page === "/messages",
+            "border-r-4 border-r-indigo-600": page === "messages",
           })}
         >
           <Link href="/messages">
-            <img
-              src="https://s2.svgbox.net/materialui.svg?ic=message&color=white"
-              className="w-5 h-5"
-            />
+            <picture>
+              <img
+                src="https://s2.svgbox.net/materialui.svg?ic=message&color=white"
+                className="w-5 h-5"
+                alt="image messages "
+              />
+            </picture>
           </Link>
         </li>
         <li>
           <Link href="/auth">
-            <img
-              src="https://s2.svgbox.net/materialui.svg?ic=exit_to_app&color=white"
-              className="w-5 h-5"
-            />
+            <picture>
+              <img
+                src="https://s2.svgbox.net/materialui.svg?ic=exit_to_app&color=white"
+                className="w-5 h-5"
+                alt="image exit"
+              />
+            </picture>
           </Link>
         </li>
       </ul>
