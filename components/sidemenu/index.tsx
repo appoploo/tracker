@@ -9,7 +9,7 @@ export function SideMenu() {
 
   return (
     <div>
-      <ul className="menu h-screen bg-slate-900 rounded-l-lg relative items-center py-2">
+      <ul className="menu h-screen bg-base-100 rounded-l-lg relative items-center py-2">
         <li
           className={clsx({
             "border-r-4 border-r-indigo-600": page === "mainpage",
