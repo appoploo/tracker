@@ -1,7 +1,7 @@
 export function LicenseButton() {
   return (
     <div>
-      <div className=" w-56 h-7 ml-auto mt-2 md:w-60 lg:w-32 xl:w-60 md:h-11 mx-2 my-2 flex justify-center items-center  bg-base-100 rounded-md  ">
+      <div className=" hidden md:w-60 lg:w-52 xl:w-60 md:h-11 mx-2 my-2 f md:flex  justify-center items-center  bg-base-100 rounded-md  ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="stroke-current flex-shrink-0 w-3 h-3  md:h-6 md:w-6 text-yellow-600"

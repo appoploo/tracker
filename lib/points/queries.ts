@@ -1,9 +1,7 @@
-// getVehicles with useSwr
-
 import axios, { AxiosError } from "axios";
 import useSWR from "swr";
 import { fetcher } from "../utils";
-import { Points } from "./types";
+import { Points } from "../points/types";
 
 export function usePoints(
   IMEI?: string | string[] | undefined,
@@ -13,8 +11,9 @@ export function usePoints(
     IMEI && `/api/tracker/${IMEI}?days=${days}`,
     fetcher
   );
+
   return {
-    data: data ?? [],
+    data: data ?? ([] as Points[]),
     isLoading: !error && !data,
     isError: error,
   };

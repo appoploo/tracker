@@ -20,9 +20,13 @@ export function TrackerSelector() {
 
   return (
     <div
-      className={clsx(" h-2  md:grid md:h-6 ", {
-        "xl:grid-cols-2 gap-2": q.IMEI,
-      })}
+      className={clsx(
+        " h-2 mr-auto w-2/3 grid gap-2 md:w-2/5 lg:w-1/2 lg:grid md:mr-0 md:h-6 ",
+        {
+          "xl:flex gap-2": q.IMEI,
+        },
+        { "md:flex gap-2": q.IMEI }
+      )}
     >
       <select
         value={q.IMEI}
@@ -37,7 +41,7 @@ export function TrackerSelector() {
           });
         }}
         className={clsx(
-          "select  focus:outline-none rounded-sm bg-base-100  select-sm  w-2/3  md:w-full text-xs 2xl:w-11/12 2xl:text-sm ml-auto"
+          "select  focus:outline-none rounded-sm bg-base-100  select-sm  w-2/3  md:w-full text-xs  xl:w-28  2xl:w-32 2xl:text-sm  "
         )}
       >
         <option>
@@ -65,7 +69,7 @@ export function TrackerSelector() {
           });
         }}
         className={clsx(
-          "select focus:outline-none bg-base-100 rounded-sm  select-sm  w-2/3 md:w-full text-xs   2xl:w-11/12 2xl:text-sm",
+          "select focus:outline-none bg-base-100 rounded-sm  select-sm  w-2/3 md:w-full text-xs   xl:w-28 2xl:w-32 2xl:text-sm",
           {
             hidden: !q.IMEI,
           }

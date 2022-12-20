@@ -1,2 +1,2 @@
 export * from "./queries";
-export * from "./types.ts";
+export * from "./types";

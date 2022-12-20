@@ -8,16 +8,15 @@ export function useTrackers() {
     `/api/tracker`,
     fetcher
   );
+
   return {
-    data: data ?? [],
+    data: data ?? ([] as Tracker[]),
     isLoading: !error && !data,
+    isValidating: isValidating,
     isError: error,
   };
 }
 
 export async function createTracker(userId: string, IMEI: string) {
-  await axios.post("/api/tracker", {
-    userId,
-    IMEI,
-  });
+  await axios.post("/api/tracker", { userId, IMEI });
 }

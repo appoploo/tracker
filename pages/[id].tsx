@@ -1,19 +1,27 @@
+import { useRouter } from "next/router";
 import { LicenseButton } from "../components/license-button";
 import { ScheduledDropdown } from "../components/scheduled-dropdown";
 import { SideMenu } from "../components/sidemenu";
 import { TabList } from "../components/tablist";
 import { TimeLine } from "../components/timeline";
 import { TrackerSelector } from "../components/tracker-selector";
+import { usePoints } from "../lib/points/queries";
 import styles from "../styles/Home.module.css";
+import React, { CSSProperties, useState } from "react";
+import clsx from "clsx";
 
 export default function Home() {
+  const [percentage, setPercentage] = useState(93.8);
+  function convertPercentages(percentage: number) {
+    return (percentage * 5) / 100;
+  }
   return (
     <div className="h-screen overflow-hidden ">
       <div className="grid grid-cols-[60px_2fr]">
         <SideMenu />
         <div className=" grid grid-cols-1 lg:grid-cols-2  2xl:grid-cols-[768px_2fr] ">
           <div className=" grid grid-rows-[220px_1fr] gap-2  bg-base-100">
-            <div className=" bg-base-300  grid grid-rows-[100px_100px]  md:grid-cols-2 p-4 ">
+            <div className=" bg-base-300  grid grid-rows-[100px_100px]  md:grid-cols-2  p-4 ">
               <div>
                 <button className="w-4 h-4 md:w-6 md:h-6 md:text-lg flex justify-center items-center font-bold  text-white bg-base-100  rounded  mb-2 md:mb-4">
                   ↰
@@ -34,18 +42,37 @@ export default function Home() {
                 <LicenseButton />
               </div>
               <div>
-                <div className="flex justify-end gap-x-2 ">
+                <div className=" flex gap-x-2">
                   <TrackerSelector />
-                  <button className="w-6 h-6 text-lg flex justify-center items-center font-bold  text-white  bg-base-100 rounded   mb-4">
-                    ⚐
-                  </button>
-                  <button className="w-6 h-6 text-lg flex justify-center items-center font-bold  text-white  bg-base-100 rounded   mb-4">
-                    ➭
-                  </button>
+                  <div className="ml-auto flex gap-x-1">
+                    <button className="w-6 h-6 text-lg flex justify-center items-center font-bold  text-white  bg-base-100 rounded   mb-4">
+                      ⚐
+                    </button>
+                    <button className="w-6 h-6 text-lg flex justify-center items-center font-bold  text-white  bg-base-100 rounded   mb-4">
+                      ➭
+                    </button>
+                  </div>
                 </div>
-                {/* <div className="radial-progress" style={{ "--value": "70" }}>
-                  4.69
-                </div> */}
+                <div className="hidden  md:mt-12 xl:mt-4 md:flex justify-end md: gap-x-10 mt-4 ">
+                  <div>
+                    <h2 className="text-white text-lg">37548 km</h2>
+                    <h2 className="text-gray-400 text-sm">Driver score</h2>
+                    <h2 className="text-green-700 text-sm text-right ">
+                      + 0.28
+                    </h2>
+                  </div>
+
+                  <div
+                    style={{ "--value": percentage } as React.CSSProperties}
+                    className={clsx(
+                      "radial-progress text-clip",
+                      { "text-green-600": percentage > 70 },
+                      { "text-red-600": percentage < 70 }
+                    )}
+                  >
+                    {`${convertPercentages(percentage)}`}
+                  </div>
+                </div>
               </div>
             </div>
 

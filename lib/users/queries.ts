@@ -1,43 +1,32 @@
-// getVehicles with useSwr
-
 import axios, { AxiosError } from "axios";
 import useSWR from "swr";
 import { fetcher } from "../utils";
-import { User } from "../users/types";
+import { User } from "./types";
 
 export function useUsers() {
   const { data, error } = useSWR<User[], AxiosError>(`/api/auth`, fetcher);
 
   return {
-    data: data ?? [],
+    data: data ?? ([] as User[]),
     isLoading: !error && !data,
     isError: error,
   };
 }
 
-export async function login(userName: string, password: string) {
-  const data = await axios.post("/api/auth?type=login", {
-    userName,
-    password,
-  });
-
-  return {
-    data: data,
-  };
+export async function login(username: string, password: string) {
+  const data = await axios.post("/api/auth?type=login", { username, password });
+  return { data: data };
 }
 
 export async function register(
-  userName: string,
+  username: string,
   password: string,
   passwordConfirmation: string
 ) {
   const data = await axios.post("/api/auth?type=register", {
-    userName,
+    username,
     password,
     passwordConfirmation,
   });
-
-  return {
-    data: data,
-  };
+  return { data: data };
 }
