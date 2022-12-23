@@ -10,7 +10,7 @@ import styles from "../styles/Home.module.css";
 import React, { CSSProperties, useState } from "react";
 import clsx from "clsx";
 
-export default function Home() {
+export default function MainPage() {
   const [percentage, setPercentage] = useState(93.8);
   function convertPercentages(percentage: number) {
     return (percentage * 5) / 100;
@@ -26,25 +26,35 @@ export default function Home() {
                 <button className="w-4 h-4 md:w-6 md:h-6 md:text-lg flex justify-center items-center font-bold  text-white bg-base-100  rounded  mb-2 md:mb-4">
                   ↰
                 </button>
-                <h2 className="block text-white  w-32 md:w-40 mb-2 md:mb-4 text-xs md:text-lg ">
-                  Alex Williams
-                </h2>
-                <div className="text-slate-600  text-xs  mt-1 md:mt-2  mb-2 md:mb-4">
-                  <h2 className="flex ">
-                    BedFord Group
-                    <span>・</span> Amey Rail
-                  </h2>
-                  <h2 className="flex ">
-                    HGV Class 1 <span>・</span>
-                    C+E
-                  </h2>
+                <div className="flex gap-6">
+                  <div>
+                    <h2 className="block text-white  w-32 md:w-40 mb-2 md:mb-4 text-xs md:text-lg ">
+                      Alex Williams
+                    </h2>
+                    <div className="text-slate-600  text-xs  mt-1 md:mt-2  mb-2 md:mb-4">
+                      <h2 className="flex ">
+                        BedFord Group
+                        <span>・</span> Amey Rail
+                      </h2>
+                      <h2 className="flex ">
+                        HGV Class 1 <span>・</span>
+                        C+E
+                      </h2>
+                    </div>
+                    <LicenseButton />
+                  </div>
+
+                  <div className=" flex mt-2 ml-auto md:hidden">
+                    <button className="  text-white btn btn-primary normal-case w-40 ">
+                      View radial progress
+                    </button>
+                  </div>
                 </div>
-                <LicenseButton />
               </div>
               <div>
-                <div className=" flex gap-x-2">
+                <div className=" flex  ml-auto ">
                   <TrackerSelector />
-                  <div className="ml-auto flex gap-x-1">
+                  <div className=" flex ml-auto gap-x-1">
                     <button className="w-6 h-6 text-lg flex justify-center items-center font-bold  text-white  bg-base-100 rounded   mb-4">
                       ⚐
                     </button>
@@ -53,6 +63,7 @@ export default function Home() {
                     </button>
                   </div>
                 </div>
+
                 <div className="hidden  md:mt-12 xl:mt-4 md:flex justify-end md: gap-x-10 mt-4 ">
                   <div>
                     <h2 className="text-white text-lg">37548 km</h2>
@@ -134,9 +145,15 @@ export default function Home() {
               </div>
 
               <div>
-                <button className=" block text-white btn btn-primary md:hidden">
-                  View timeline
-                </button>
+                <div className="mt-6 flex gap-3 md:hidden">
+                  <button className="  text-white btn btn-primary normal-case w-40 ">
+                    View timeline
+                  </button>
+                  <button className="  text-white btn btn-secondary normal-case w-40 ">
+                    View map
+                  </button>
+                </div>
+
                 <div className=" hidden md:block md:overflow-auto">
                   <TimeLine />
                 </div>

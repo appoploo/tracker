@@ -21,11 +21,12 @@ export function TrackerSelector() {
   return (
     <div
       className={clsx(
-        " h-2 mr-auto w-2/3 grid gap-2 md:w-2/5 lg:w-1/2 lg:grid md:mr-0 md:h-6 ",
+        " h-2 mr-auto w-2/3 flex mt-2  md:w-2/5 md:mt-0 md:mr-0 md:h-6 md:ml-auto lg:w-1/2 ",
         {
           "xl:flex gap-2": q.IMEI,
         },
-        { "md:flex gap-2": q.IMEI }
+        { "md:flex gap-2": q.IMEI },
+        { "md:ml-0": q.IMEI }
       )}
     >
       <select
