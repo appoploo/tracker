@@ -44,8 +44,8 @@ export default function MainPage() {
                     <LicenseButton />
                   </div>
 
-                  <div className=" flex mt-2 ml-auto md:hidden">
-                    <button className="  text-white btn btn-primary normal-case w-40 ">
+                  <div className=" flex mt-2 ml-auto max-[412px]:w-8 max-[412px]:mr-36 md:hidden">
+                    <button className="  text-white btn btn-primary normal-case w-40 max-[412px]:w-28 max-[412px]:mr-10">
                       View radial progress
                     </button>
                   </div>
@@ -54,11 +54,11 @@ export default function MainPage() {
               <div>
                 <div className=" flex  ml-auto ">
                   <TrackerSelector />
-                  <div className=" flex ml-auto gap-x-1">
-                    <button className="w-6 h-6 text-lg flex justify-center items-center font-bold  text-white  bg-base-100 rounded   mb-4">
+                  <div className=" flex ml-auto gap-x-1 max-[412px]:mr-14">
+                    <button className="w-6 h-6 text-lg flex justify-center items-center font-bold  text-white  bg-base-100 rounded   mb-4 ">
                       ⚐
                     </button>
-                    <button className="w-6 h-6 text-lg flex justify-center items-center font-bold  text-white  bg-base-100 rounded   mb-4">
+                    <button className="w-6 h-6 text-lg flex justify-center items-center font-bold  text-white  bg-base-100 rounded   mb-4 ">
                       ➭
                     </button>
                   </div>
@@ -146,10 +146,10 @@ export default function MainPage() {
 
               <div>
                 <div className="mt-6 flex gap-3 md:hidden">
-                  <button className="  text-white btn btn-primary normal-case w-40 ">
+                  <button className="  text-white btn btn-primary normal-case w-40 max-[412px]:w-28">
                     View timeline
                   </button>
-                  <button className="  text-white btn btn-secondary normal-case w-40 ">
+                  <button className="  text-white btn btn-secondary normal-case w-40 max-[412px]:w-28">
                     View map
                   </button>
                 </div>
